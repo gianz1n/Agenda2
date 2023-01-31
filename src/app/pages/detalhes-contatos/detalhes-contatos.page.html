@@ -1,0 +1,64 @@
+<!-- toolbar -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button Href="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Lixeira botao -->
+<ion-fab vertical="bot" horizontal="end" slot="fixed" edge="true" id="botao">
+  <ion-fab-button (click)="confirmardelete()" *ngIf="!modoDeEdicao" color="dark">
+    <ion-icon name="trash"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<!-- Avatar foto -->
+<ion-content>
+  <ion-avatar id="avatar">
+    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"/>
+  </ion-avatar>
+
+  <ion-item *ngIf="!modoDeEdicao" >{{pessoa1.nome}}</ion-item> -
+  <ion-item *ngIf="!modoDeEdicao">{{pessoa1.sobrenome}}</ion-item>
+  <ion-item *ngIf="!modoDeEdicao">{{pessoa1.tipo}}</ion-item>
+  <ion-item *ngIf="!modoDeEdicao">{{pessoa1.numero}}</ion-item>
+  <ion-item *ngIf="!modoDeEdicao">{{pessoa1.email}}</ion-item> 
+
+<!-- Edit botao -->
+  <ion-button id="editbtt" *ngIf="!modoDeEdicao" (click)="iniciarEdicao()" color="dark">Editar</ion-button>
+
+  <form [formGroup]="pessoaForm" *ngIf="modoDeEdicao" (ngSubmit)="encerrarEdicao()">
+    <ion-item>
+      <ion-label position="floating">Nome:</ion-label>
+      <ion-input [(ngModel)]="pessoa1.nome" name="nome" formControlName="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Sobrenome:</ion-label>
+      <ion-input [(ngModel)]="pessoa1.sobrenome" name="sobrenome" formControlName="sobrenome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número:</ion-label>
+      <ion-input [(ngModel)]="pessoa1.numero" name="numero" formControlName="numero" simpleMask="(99)9-9999-9999" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input [(ngModel)]="pessoa1.email" name="email" placeholder="Opcional" formControlName="email"></ion-input> 
+    </ion-item>
+
+    
+    <ion-select placeholder="Selecione o tipo" [(ngModel)]="pessoa1.tipo" name="tipo" formControlName="tipo">
+      <ion-select-option value="Celular">Celular</ion-select-option>
+      <ion-select-option value="Casa">Casa</ion-select-option>
+      <ion-select-option value="Trabalho">Trabalho</ion-select-option>
+    </ion-select>
+
+    <ion-button  id="savebtt" type="submit" [disabled]="!pessoaForm.valid" routerLink="/listagens-contatos"  color="dark">✓</ion-button>
+  </form>
+
+</ion-content>

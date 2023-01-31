@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+
+#botao{
+    margin-top: 5px;
+    margin-right: 2px;
+}
+
+#avatar {
+    margin-left: 110px;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+#savebtt {
+    margin-left: 130px;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 600px;
+    background-color: #151515;
+}
+
+#editbtt {
+    margin-left: 115px;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600px;
+    border-radius: 50px;
+    background-color: #151515;
+}
+
+/*BARRA DE FERRAMENTAS*/
+ion-toolbar{
+    --ion-toolbar-background: #151515; /*cor do background*/
+    --ion-text-color: #ffffff; /*cor do texto*/
+    --ion-toolbar-color:#ffffff; /*cor do titulo*/
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+/*CONTEUDO OU CORPO*/
+ion-content{
+    --ion-background-color:#151515;
+    --ion-text-color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+/*BORDA DOS ITENS*/
+ion-item{
+    --ion-item-border-color:#ffffff; /*cor da borda de um item*/
+}
+
+/*HEADER*/
+ion-header{
+    --ion-toolbar-border-color:#ffffff; /*linha abaixo do header*/
+}
+

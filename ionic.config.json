@@ -1,0 +1,9 @@
+{
+  "name": "Agenda",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    }
+  },
+  "type": "angular"
+}
