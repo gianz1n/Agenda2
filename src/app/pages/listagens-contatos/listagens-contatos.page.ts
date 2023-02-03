@@ -16,6 +16,7 @@ export class ListagensContatosPage implements OnInit {
   public arrayPessoa: any
   public dadosContatos : any
 
+
   constructor(
     private objContatos : DadosContatosService,
     private FormBuilder : FormBuilder,
@@ -23,17 +24,24 @@ export class ListagensContatosPage implements OnInit {
     this.dadosContatos = objContatos.enviarContatos()
    }
 
+
+
+
+
+
    ngOnInit(){
-    this.pessoa = {id: Guid.createEmpty(), nome:"", sobrenome:"", tipo:"", numero:"", email:""}
+    this.pessoa = {id: Guid.createEmpty(), marca: "", nome: "", cor: "", tamanho: "", tipo: "", preco:"", quantidade:""}
  
     this.pessoaForm = this.FormBuilder.group
     ({
-       id : [this.pessoa.id],
-       nome : [this.pessoa.nome, Validators.required],
-       sobrenome : [this.pessoa.sobrenome, Validators.required],
-       tipo : [this.pessoa.tipo, Validators.required],
-       numero : [this.pessoa.numero, Validators.required],
-       email : [this.pessoa.email, Validators.required]
+      id: [this.pessoa.id],
+      marca: [this.pessoa.marca, Validators.required],
+      nome: [this.pessoa.nome, Validators.required],
+      cor: [this.pessoa.cor, Validators.required],
+      tamanho: [this.pessoa.tamanho, Validators.required],
+      tipo: [this.pessoa.tipo, Validators.required],
+      preco: [this.pessoa.preco, Validators.required],
+      quantidade: [this.pessoa.quantidade, Validators.required],
     })
     
     this.pessoaService.listarTodos().then(arrayPessoa => {this.arrayPessoa = arrayPessoa})

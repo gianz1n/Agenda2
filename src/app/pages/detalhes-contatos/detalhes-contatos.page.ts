@@ -70,16 +70,18 @@ export class DetalhesContatosPage implements OnInit {
 
   ngOnInit() {
 
-    this.pessoa1 = {id: Guid.createEmpty(), nome: "", sobrenome: "", numero: "", email: "", tipo: ""}
+    this.pessoa1 = {id: Guid.createEmpty(), marca: "", nome: "", cor: "", tamanho: "", tipo: "", preco:"", quantidade:""}
 
     // validação
     this.pessoaForm = this.formularioBuilder.group({
       id: [this.pessoa1.id],
-      nome: [this.pessoa1.nome, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(40)])],
-      sobrenome: [this.pessoa1.sobrenome, Validators.compose([Validators.required, Validators.maxLength(40)])],
+      marca: [this.pessoa1.marca, Validators.required],
+      nome: [this.pessoa1.nome, Validators.required],
+      cor: [this.pessoa1.cor, Validators.required],
+      tamanho: [this.pessoa1.tamanho, Validators.required],
       tipo: [this.pessoa1.tipo, Validators.required],
-      numero: [this.pessoa1.numero, Validators.compose([Validators.required, Validators.minLength(14)])],
-      email: [this.pessoa1.email, Validators.compose([Validators.required, Validators.email, Validators.maxLength(25)])]
+      preco: [this.pessoa1.preco, Validators.required],
+      quantidade: [this.pessoa1.quantidade, Validators.required],
     })
 
     // captar ID

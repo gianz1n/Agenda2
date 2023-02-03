@@ -3,9 +3,11 @@ import { Guid } from 'guid-typescript'
 
 export interface Pessoa {
     id: Guid
+    marca: string
     nome: string
-    sobrenome: string
+    cor: string
+    tamanho: string
     tipo: string
-    numero: string
-    email: string
+    preco: string
+    quantidade: string
 }

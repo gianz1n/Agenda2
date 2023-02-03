@@ -4,27 +4,27 @@
   <ion-content class="ion-padding">
 
   <!--Opções do menu  -->
-    <ion-item>
+    <ion-item routerLink="/listagens-contatos/">
       <ion-label position="floating"></ion-label>
       <p>Estoque</p>
     </ion-item>
 
-    <ion-item>
+    <ion-item routerLink="//">
       <ion-label position="floating"></ion-label>
       <p>Venda</p>
     </ion-item>
 
-    <ion-item>
+    <ion-item routerLink="//">
       <ion-label position="floating"></ion-label>
       <p>Historico de vendas</p>
     </ion-item>
 
-    <ion-item>
+    <ion-item routerLink="//">
       <ion-label position="floating"></ion-label>
       <p>Historico de compras</p>
     </ion-item>
 
-    <ion-item>
+    <ion-item routerLink="//">
       <ion-label position="floating"></ion-label>
       <p>Sair</p>
     </ion-item>
@@ -43,24 +43,41 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- Barra de pesquisas -->
-<!-- <ion-searchbar placeholder=""></ion-searchbar> -->
-
-<!-- Botao de adicionar -->
-<!-- <ion-fab vertical="bot" horizontal="end" slot="fixed" edge="true" id="botao">
-  <ion-fab-button routerLink="/detalhes-contatos/add"  color="dark">
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab> -->
-
 <!-- Corpo do app -->
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor = 'let arrayPessoa of arrayPessoa' routerLink="/detalhes-contatos/{{arrayPessoa.id.value}}">
-       <!-- <ion-avatar id="avatar">
-        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"/>
-      </ion-avatar> -->
-      <ion-label>{{arrayPessoa.nome}}</ion-label>
+
+
+
+
+  <div class="corpo">
+
+<ion-list>
+      <!-- icone de foto -->
+    <ion-item *ngFor = 'let arrayPessoa of arrayPessoa' routerLink="/detalhes-contatos/{{arrayPessoa.id.value}}" detail="true" id="itens">
+      <ion-thumbnail slot="start">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+      </ion-thumbnail>
+      <ion-label><h2>{{arrayPessoa.nome}}</h2>
+        <p>Quantidade: {{arrayPessoa.quantidade}}</p>
+      </ion-label>
     </ion-item>
+
 </ion-list>
+
+<!-- Botao de Adicionar e Vendas -->
+<ion-fab slot="fixed" vertical="bottom" horizontal="end" id="button_list">
+  <ion-fab-button>
+    <ion-icon name="chevron-up-circle"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button>
+      <ion-icon name="add" routerLink="/detalhes-contatos/add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="basket"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+</div>
 </ion-content>
+

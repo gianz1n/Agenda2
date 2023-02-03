@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
-// botao add
-#botao{
-    margin-top: 5px;
-    margin-right: 2px;
+// Botao Adicionar e Vendas
+#button_list {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    margin-right: 15px;
 }
 
-// avatar
-#avatar{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+#itens p{
+    color: rgb(143, 143, 143);
+}
+
+.corpo {
+    padding-top: 20px;
+}
+
+#segment{
+    color: #FFFFFF;
 }
 
 /*BARRA DE FERRAMENTAS*/
@@ -20,6 +27,7 @@ ion-toolbar{
     --ion-toolbar-color:#ffffff; /*cor do titulo*/
     font-family: 'Inter', sans-serif;
     font-size: 15px;
+    
 }
 
 /*CONTEUDO OU CORPO*/
@@ -94,5 +102,6 @@ ion-header{
     padding-bottom: 5px;
     background: #151515;
 }
+
 
 
